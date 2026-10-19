@@ -1,3 +1,4 @@
+from os import getenv
 import smtplib
 from email.message import EmailMessage
 
@@ -5,8 +6,8 @@ from email.message import EmailMessage
 
 def send_mail(recipient_email: str, subject: str, body: str) -> str:
     #  1. Setup email configuration
-    SENDER_EMAIL = "amansngh8586@gmail.com"
-    SENDER_PASSWORD = "vkhz jjxq aeev aoxz"  # Do not use your primary password; use an App Password
+    SENDER_EMAIL = getenv("SENDER_EMAIL")
+    SENDER_PASSWORD = getenv("SENDER_PASSWORD")  # Do not use your primary password; use an App Password
 
     # 2. Build the email message
     msg = EmailMessage()
